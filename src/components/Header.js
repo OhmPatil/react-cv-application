@@ -6,7 +6,7 @@ class Header extends Component{
     render(){
         return(
             <header>
-                <h1>CV Builder</h1>
+                <h1>CV Application</h1>
             </header>
         )
     }
