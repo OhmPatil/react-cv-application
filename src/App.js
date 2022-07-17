@@ -3,7 +3,7 @@ import Header from './components/Header';
 // import './styles/reset.css'
 import './styles/App.css'
 import Form from './components/Form';
-import RenderCV from './components/RenderCV';
+// import RenderCV from './components/RenderCV';
 
 
 class App extends Component{
@@ -31,7 +31,7 @@ class App extends Component{
       <div>
         <Header/>
         <Form/>
-        <RenderCV/>
+        {/* <RenderCV/> */}
       </div>
     )
   }

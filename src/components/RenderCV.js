@@ -7,6 +7,9 @@ class RenderCV extends Component{
         return(
             <div className="cv-container">
                 <div id="first-name">{this.props.firstname}</div>
+                <div id="last-name">{this.props.lastname}</div>
+                <div id="phone">{this.props.phone}</div>
+                <div id="email">{this.props.email}</div>
             </div>
         )
     }

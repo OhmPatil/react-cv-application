@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import '../styles/form.css'
+import RenderCV from "./RenderCV";
 
 class Form extends Component{
     constructor(props){
@@ -24,17 +25,17 @@ class Form extends Component{
     
     handleSubmit = (e) => {
         e.preventDefault();
-        document.querySelector('form').reset();
         console.log('first name:', this.state.first_name);
         console.log('last name:', this.state.last_name);
         console.log('phone:', this.state.phone);
         console.log('email:', this.state.email);
+        document.querySelector('form').reset();
     }
 
 
     render(){
         return(
-            <div className="form-container">
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type='text' placeholder="First name..." id="firstname" value={this.state.first_name}/>
                     <input onChange={this.handleChange} type='text' placeholder="Last name..." id="lastname" value={this.state.last_name}/>
@@ -42,6 +43,10 @@ class Form extends Component{
                     <input onChange={this.handleChange} type='text' placeholder="Email..." id="email" value={this.state.email}/>
                     <button type="submit">Submit</button>
                 </form>
+                <RenderCV firstname={this.state.first_name}
+                          lastname={this.state.last_name}
+                          phone={this.state.phone}
+                          email={this.state.email}/>
             </div>
         )
     }
