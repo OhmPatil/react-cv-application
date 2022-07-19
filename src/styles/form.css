@@ -1,12 +1,12 @@
-.form-container{
+.main-container{
     border: 2px solid green;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 50%;
+    gap: 25px;
+    margin: 20px;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
     width: 100%;
