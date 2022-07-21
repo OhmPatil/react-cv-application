@@ -25,7 +25,7 @@ class RenderCV extends Component{
                     <div className="divider"></div>
                     <div id="degree">{this.props.degree}</div>
                 </div>
-                <RenderEducation degree={this.props.degree}/>   
+                <RenderEducation/>   
             </div>
         )
     }
