@@ -27,10 +27,10 @@ class Form extends Component{
     
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('first name:', this.state.first_name);
-        console.log('last name:', this.state.last_name);
-        console.log('phone:', this.state.phone);
-        console.log('email:', this.state.email);
+        // console.log('first name:', this.state.first_name);
+        // console.log('last name:', this.state.last_name);
+        // console.log('phone:', this.state.phone);
+        // console.log('email:', this.state.email);
         document.querySelector('form').reset();
     }
 
