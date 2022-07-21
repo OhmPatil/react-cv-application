@@ -15,7 +15,6 @@ class Form extends Component{
             description: '',
           };
 
-        //   this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange = (e) => {
@@ -35,6 +34,25 @@ class Form extends Component{
         document.querySelector('form').reset();
     }
 
+    displayEducationForm = () => {
+        let parentForm = document.querySelector('.form');
+        let educationForm = document.createElement('div')
+        educationForm.classList.add('form')
+        let subtitle = document.createElement('div')
+        subtitle.classList.add('subtitle')
+        subtitle.textContent = 'Education'
+
+        let degreeInput = document.createElement('input')
+        degreeInput.type = 'text'        
+        degreeInput.placeholder = 'Degree likho'
+
+        educationForm.appendChild(subtitle)
+        educationForm.appendChild(degreeInput)
+
+        parentForm.appendChild(educationForm)
+
+    }
+
 
     render(){
         return(
@@ -46,8 +64,8 @@ class Form extends Component{
                     <input onChange={this.handleChange} type='number' placeholder="Phone..." id="form-phone" value={this.state.phone}/>
                     <input onChange={this.handleChange} type='text' placeholder="Email..." id="form-email" value={this.state.email}/>
                     <input onChange={this.handleChange} type='textarea' placeholder="Description..." id="form-description" value={this.state.description}/>
-
-                <EducationInfo/> 
+                    {/* <button onClick={this.displayEducationForm}>Add Education</button> */}
+                <EducationInfo/>
                 </form>
                 <div>
                 <RenderCV firstname={this.state.first_name}
