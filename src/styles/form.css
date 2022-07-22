@@ -6,7 +6,7 @@
     margin: 20px;
 }
 
-.form, .edu-form{
+.form, .edu-form, .exp-form{
     display: flex;
     flex-direction: column;
     width: 100%;

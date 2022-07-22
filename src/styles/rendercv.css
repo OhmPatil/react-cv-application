@@ -33,16 +33,16 @@
     font-style: italic;
 }
 
-.edu-container{
+.edu-container, .exp-container{
     display: flex;
     gap: 50px;
 }
 
-.from-to, .uniname-city{
+.from-to, .uniname-city, .position{
     font-weight: 600;
 }
 
-.edu-details{
+.edu-details, .exp-details{
     display: flex;
     flex-direction: column;
 }

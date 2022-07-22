@@ -34,6 +34,20 @@ class RenderCV extends Component{
                     </div>
                 
                 ))}
+
+                <div>
+                    <div className="subtitle">Experience</div>
+                    <div className="divider"></div>
+                </div>
+                {this.props.experiences.map((experience, index) => (
+                    <div key={index} className='exp-container'>
+                        <div className="from-to">{experience.exp_from} - {experience.exp_to}</div>
+                        <div className="exp-details">
+                            <div className="position">{experience.position}</div>
+                            <div className="company">{experience.company}<span className="city">, {experience.exp_city}</span></div>
+                        </div>
+                    </div>
+                ))}
             </div>
         )
     }
