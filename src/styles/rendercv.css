@@ -36,6 +36,8 @@
 .edu-container, .exp-container{
     display: flex;
     gap: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .from-to, .uniname-city, .position{

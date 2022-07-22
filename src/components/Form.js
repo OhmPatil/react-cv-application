@@ -90,12 +90,23 @@ class Form extends Component{
         })
     }
 
+    handleAddExperience = () => {
+        this.setState({
+            experiences: this.state.experiences.concat(this.state.experience)
+        })
+    }
+
     handleDeleteEducation = (index) => {
         const educationsList = [...this.state.educations]
         educationsList.splice(index, 1)
         this.setState({educations: educationsList})
     }
 
+    handleDeleteExperience = (index) => {
+        const experienceList = [...this.state.experiences]
+        experienceList.splice(index, 1)
+        this.setState({experiences: experienceList})
+    }
 
     render(){
         return(
@@ -134,6 +145,12 @@ class Form extends Component{
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="City..." className="form-exp-city" value={experience.exp_city} name='exp_city'/>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="From..." className="form-exp-from" value={experience.exp_from} name='exp_from'/>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="To..." className="form-exp-to" value={experience.exp_to} name='exp_to'/>
+                    {this.state.experiences.length > 1 && (
+                        <button onClick={() => this.handleDeleteEducation(index)}>Delete Experience</button>
+                    )}
+                    {this.state.experiences.length - 1 === index && (
+                        <button onClick={this.handleAddExperience}>Add Experience</button>
+                    )}
                 </div>
             ))}
             </>
