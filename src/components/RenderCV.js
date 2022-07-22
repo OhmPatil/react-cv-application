@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import '../styles/rendercv.css'
-import RenderEducation from "./RenderEducation";
+// import RenderEducation from "./RenderEducation";
 
 class RenderCV extends Component{
 
@@ -25,7 +25,14 @@ class RenderCV extends Component{
                     <div className="divider"></div>
                     <div id="degree">{this.props.degree}</div>
                 </div>
-                <RenderEducation/>   
+                {this.props.educations.map((education, index) => (
+                    <div key={index}>
+                    <div className="subtitle" >Education</div>
+                    <div className="divider"></div>
+                    <div>{education.degree}</div>
+                    </div>
+                
+                ))}
             </div>
         )
     }

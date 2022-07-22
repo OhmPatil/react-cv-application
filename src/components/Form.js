@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import '../styles/form.css'
 import RenderCV from "./RenderCV";
-import EducationInfo from "./EducationInfo";
+// import EducationInfo from "./EducationInfo";
+import uniqid from 'uniqid'
+
 
 class Form extends Component{
     constructor(props){
@@ -15,6 +17,26 @@ class Form extends Component{
             description: '',
           };
 
+          this.state = {
+            educations: [{
+                degree: '',
+                uniname: '',
+                city: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            }],
+
+            education: {
+                degree: '',
+                uniname: '',
+                city: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            }
+        }
+
     }
 
     handleChange = (e) => {
@@ -24,33 +46,38 @@ class Form extends Component{
         this.setState({email: document.getElementById('form-email').value})
         this.setState({description: document.getElementById('form-description').value})
       }
+
+      handleEducationChange = (e, index) => {
+        const educationList = [...this.state.educations]
+        educationList[index][e.target.name] = e.target.value
+        this.setState({educations: educationList})
+
+        console.log(this.state.educations);
+    }
     
     handleSubmit = (e) => {
         e.preventDefault();
-        // console.log('first name:', this.state.first_name);
-        // console.log('last name:', this.state.last_name);
-        // console.log('phone:', this.state.phone);
-        // console.log('email:', this.state.email);
         document.querySelector('form').reset();
     }
 
-    displayEducationForm = () => {
-        let parentForm = document.querySelector('.form');
-        let educationForm = document.createElement('div')
-        educationForm.classList.add('form')
-        let subtitle = document.createElement('div')
-        subtitle.classList.add('subtitle')
-        subtitle.textContent = 'Education'
+    handleAddEducation = () => {
+        this.setState({
+            educations: this.state.educations.concat(this.state.education),
+            education: {
+                degree: '',
+                uniname: '',
+                city: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            }
+        })
+    }
 
-        let degreeInput = document.createElement('input')
-        degreeInput.type = 'text'        
-        degreeInput.placeholder = 'Degree likho'
-
-        educationForm.appendChild(subtitle)
-        educationForm.appendChild(degreeInput)
-
-        parentForm.appendChild(educationForm)
-
+    handleDeleteEducation = (index) => {
+        const educationsList = [...this.state.educations]
+        educationsList.splice(index, 1)
+        this.setState({educations: educationsList})
     }
 
 
@@ -64,15 +91,34 @@ class Form extends Component{
                     <input onChange={this.handleChange} type='number' placeholder="Phone..." id="form-phone" value={this.state.phone}/>
                     <input onChange={this.handleChange} type='text' placeholder="Email..." id="form-email" value={this.state.email}/>
                     <input onChange={this.handleChange} type='textarea' placeholder="Description..." id="form-description" value={this.state.description}/>
-                    {/* <button onClick={this.displayEducationForm}>Add Education</button> */}
-                <EducationInfo/>
+                    <>
+            {this.state.educations.map((education, index) => (
+                <div className="edu-form" key={index}>
+                <div className="subtitle" >Add Education</div>
+                <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="Degree..." className="form-degree" value={education.degree} name='degree'/>
+                <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="University name..." id="form-uniname" value={education.uniname} name='uniname'/>
+                <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="City..." id="form-city" value={education.city} name='city'/>
+                <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="From..." id="form-from" value={education.from} name='from'/>
+                <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="To..." id="form-to" value={education.to} name='to'/>
+                {this.state.educations.length - 1 === index && (
+                    <button onClick={this.handleAddEducation}>Add Education</button>
+                )}
+
+                {this.state.educations.length > 1 && (
+                    <button onClick={() => this.handleDeleteEducation(index)}>Delete Education</button>
+                )}
+                </div>
+                
+            ))}
+            </>
                 </form>
                 <div>
                 <RenderCV firstname={this.state.first_name}
                           lastname={this.state.last_name}
                           phone={this.state.phone}
                           email={this.state.email}
-                          description={this.state.description}/>
+                          description={this.state.description}
+                          educations={this.state.educations}/>
                 </div>
             </div>
         )
