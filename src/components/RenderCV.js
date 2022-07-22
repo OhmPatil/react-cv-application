@@ -23,13 +23,14 @@ class RenderCV extends Component{
                 <div>
                     <div className="subtitle">Education</div>
                     <div className="divider"></div>
-                    <div id="degree">{this.props.degree}</div>
                 </div>
                 {this.props.educations.map((education, index) => (
-                    <div key={index}>
-                    <div className="subtitle" >Education</div>
-                    <div className="divider"></div>
-                    <div>{education.degree}</div>
+                    <div key={index} className='edu-container'>
+                        <div className="from-to">{education.from} - {education.to}</div>
+                        <div className="edu-details">
+                            <div className="uniname-city">{education.uniname}, {education.city}</div>
+                            <div>{education.degree}</div>
+                        </div>
                     </div>
                 
                 ))}

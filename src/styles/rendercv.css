@@ -32,3 +32,17 @@
 #description{
     font-style: italic;
 }
+
+.edu-container{
+    display: flex;
+    gap: 50px;
+}
+
+.from-to, .uniname-city{
+    font-weight: 600;
+}
+
+.edu-details{
+    display: flex;
+    flex-direction: column;
+}
