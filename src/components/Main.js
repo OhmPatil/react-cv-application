@@ -96,13 +96,15 @@ class Main extends Component{
         })
     }
 
-    handleDeleteEducation = (index) => {
+    handleDeleteEducation = (e, index) => {
+        e.preventDefault()
         const educationsList = [...this.state.educations]
         educationsList.splice(index, 1)
         this.setState({educations: educationsList})
     }
 
-    handleDeleteExperience = (index) => {
+    handleDeleteExperience = (e, index) => {
+        e.preventDefault()
         const experienceList = [...this.state.experiences]
         experienceList.splice(index, 1)
         this.setState({experiences: experienceList})
@@ -128,7 +130,7 @@ class Main extends Component{
                     <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="From..." id="form-edu-from" value={education.from} name='from'/>
                     <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="To..." id="form-edu-to" value={education.to} name='to'/>
                     {this.state.educations.length > 1 && (
-                        <button onClick={() => this.handleDeleteEducation(index)}>Delete Education</button>
+                        <button onClick={(e) => this.handleDeleteEducation(e, index)}>Delete Education</button>
                     )}
                     {this.state.educations.length - 1 === index && (
                         <button onClick={this.handleAddEducation}>Add Education</button>
@@ -146,7 +148,7 @@ class Main extends Component{
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="From..." className="form-exp-from" value={experience.exp_from} name='exp_from'/>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="To..." className="form-exp-to" value={experience.exp_to} name='exp_to'/>
                     {this.state.experiences.length > 1 && (
-                        <button onClick={() => this.handleDeleteEducation(index)}>Delete Experience</button>
+                        <button onClick={(e) => this.handleDeleteExperience(e, index)}>Delete Experience</button>
                     )}
                     {this.state.experiences.length - 1 === index && (
                         <button onClick={this.handleAddExperience}>Add Experience</button>

@@ -1,9 +1,20 @@
 .main-container{
     border: 2px solid green;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    column-gap: 100px;
+    row-gap: 50px;
     margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
+    place-content: center;
+}
+
+.form{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 25px;
+    min-height: auto;
+    height: auto;
+    overflow: scroll;
 }
 
 .form, .edu-form, .exp-form{

@@ -1,6 +1,14 @@
 .cv-container{
-    border: 2px solid blue;
-    padding: 10px;
+    padding: 25px;
+    height: clamp(800px, 900px, 1000px);
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.cv-container > *{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .subtitle{
@@ -31,6 +39,7 @@
 
 #description{
     font-style: italic;
+    word-wrap: break-word;
 }
 
 .edu-container, .exp-container{
