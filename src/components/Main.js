@@ -15,6 +15,8 @@ class Main extends Component{
             phone: '',
             email: '',
             description: '',
+            location: '',
+            dob: '',
           };
 
           this.state = {
@@ -62,6 +64,8 @@ class Main extends Component{
         this.setState({last_name: document.getElementById('form-lastname').value})
         this.setState({phone: document.getElementById('form-phone').value})
         this.setState({email: document.getElementById('form-email').value})
+        this.setState({location: document.getElementById('form-location').value})
+        this.setState({dob: document.getElementById('form-dob').value})
         this.setState({description: document.getElementById('form-description').value})
     }
 
@@ -127,22 +131,24 @@ class Main extends Component{
             <div className="main-container">
                 <form className='form'>
                     <div className="subtitle">Peronal Information</div>
-                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="First name..." id="form-firstname" value={this.state.first_name} name='first_name'/>
-                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Last name..." id="form-lastname" value={this.state.last_name} name='last_name'/>
-                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='number' placeholder="Phone..." id="form-phone" value={this.state.phone} name='phone'/>
-                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Email..." id="form-email" value={this.state.email} name='email'/>
-                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='textarea' placeholder="Description..." id="form-description" value={this.state.description} name='description'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="First name" id="form-firstname" value={this.state.first_name} name='first_name'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Last name" id="form-lastname" value={this.state.last_name} name='last_name'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Phone" id="form-phone" value={this.state.phone} name='phone'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Email" id="form-email" value={this.state.email} name='email'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Location / Address" id="form-location" value={this.state.location} name='location'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Date Of Birth" id="form-dob" value={this.state.dob} name='dob'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='textarea' placeholder="About (optional)" id="form-description" value={this.state.description} name='description'/>
 
                     <div className="divider"></div>
             <>
             <div className="subtitle" >Add Education</div>
             {this.state.educations.map((education, index) => (
                 <div className="edu-form" key={education.id}>
-                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="Degree..." className="form-edu-degree" value={education.degree} name='degree'/>
-                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="University name..." id="form-edu-uniname" value={education.uniname} name='uniname'/>
-                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="City..." id="form-edu-city" value={education.city} name='city'/>
-                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="From..." id="form-edu-from" value={education.from} name='from'/>
-                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="To..." id="form-edu-to" value={education.to} name='to'/>
+                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="Degree / Qualification" className="form-edu-degree" value={education.degree} name='degree'/>
+                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="University / School name" id="form-edu-uniname" value={education.uniname} name='uniname'/>
+                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="City" id="form-edu-city" value={education.city} name='city'/>
+                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="From" id="form-edu-from" value={education.from} name='from'/>
+                    <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="To" id="form-edu-to" value={education.to} name='to'/>
                     {this.state.educations.length > 1 && (
                         <button onClick={(e) => this.handleDeleteEducation(e, index)}>Delete Education</button>
                     )}
@@ -156,11 +162,11 @@ class Main extends Component{
             <div className="subtitle">Add Experience</div>
             {this.state.experiences.map((experience, index) => (
                 <div className="exp-form" key={experience.id}>
-                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Position..." className="form-exp-position" value={experience.position} name='position'/>
-                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Company..." className="form-exp-company" value={experience.company} name='company'/>
-                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="City..." className="form-exp-city" value={experience.exp_city} name='exp_city'/>
-                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="From..." className="form-exp-from" value={experience.exp_from} name='exp_from'/>
-                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="To..." className="form-exp-to" value={experience.exp_to} name='exp_to'/>
+                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Position" className="form-exp-position" value={experience.position} name='position'/>
+                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Company" className="form-exp-company" value={experience.company} name='company'/>
+                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="City" className="form-exp-city" value={experience.exp_city} name='exp_city'/>
+                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="From" className="form-exp-from" value={experience.exp_from} name='exp_from'/>
+                    <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="To" className="form-exp-to" value={experience.exp_to} name='exp_to'/>
                     {this.state.experiences.length > 1 && (
                         <button onClick={(e) => this.handleDeleteExperience(e, index)}>Delete Experience</button>
                     )}
@@ -175,6 +181,8 @@ class Main extends Component{
                           lastname={this.state.last_name}
                           phone={this.state.phone}
                           email={this.state.email}
+                          location={this.state.location}
+                          dob={this.state.dob}
                           description={this.state.description}
                           educations={this.state.educations}
                           experiences={this.state.experiences}/>

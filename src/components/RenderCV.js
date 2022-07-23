@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import '../styles/rendercv.css'
+import { FaPhoneSquareAlt, FaEnvelope, FaMapMarkerAlt, FaRegCalendarAlt } from 'react-icons/fa';
 
 
 class RenderCV extends Component{
@@ -12,8 +13,12 @@ class RenderCV extends Component{
                     <div id="last-name">{this.props.lastname}</div>
                 </div>
                 <div className="contact-details">
-                    {this.props.phone && (<div id="phone">Phone: {this.props.phone}</div>)}
-                    {this.props.email && (<div id="email">Email: {this.props.email}</div>)}
+                    {this.props.phone && (<div id="phone"><FaPhoneSquareAlt size='1.25rem'/>{this.props.phone}</div>)}
+                    {this.props.email && (<div id="email"><FaEnvelope size='1.25rem'/>{this.props.email}</div>)}
+                    {this.props.location && (<div id="phone"><FaMapMarkerAlt size='1.25rem'/>{this.props.location}</div>)}
+                    {this.props.dob && (<div id="email"><FaRegCalendarAlt size='1.25rem'/>{this.props.dob}</div>)}
+                </div>
+                <div className="contact-details">
                 </div>
 
                 {this.props.description && (
