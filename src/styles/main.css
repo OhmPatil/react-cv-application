@@ -13,8 +13,9 @@
     border-radius: 10px;
     padding: 25px;
     min-height: auto;
-    height: auto;
-    overflow: scroll;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(209, 209, 209);
 }
 
 .form, .edu-form, .exp-form{
@@ -22,4 +23,28 @@
     flex-direction: column;
     width: 100%;
     gap: 10px;
+    align-items: center;
+}
+
+input{
+    height: 1.20rem;
+    width: 85%;
+    font-size: .8rem;
+    border-radius: 10px;
+    border: none;
+    padding: 7px;
+}
+
+button{
+    width: 50%;
+    height: 1.5rem;
+    border-radius: 10px;
+    font-size: .8rem;
+    border: none;
+    padding: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    filter: invert(1);
 }

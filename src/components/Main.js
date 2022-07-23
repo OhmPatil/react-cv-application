@@ -57,7 +57,7 @@ class Main extends Component{
 
     }
 
-    handleChange = (e) => {
+    handlePersonalInfoChange = () => {
         this.setState({first_name: document.getElementById('form-firstname').value})
         this.setState({last_name: document.getElementById('form-lastname').value})
         this.setState({phone: document.getElementById('form-phone').value})
@@ -79,20 +79,32 @@ class Main extends Component{
         this.setState({experiences: experienceList})
     }
     
-    handleSubmit = (e) => {
-        e.preventDefault();
-        document.querySelector('form').reset();
-    }
-
     handleAddEducation = () => {
         this.setState({
             educations: this.state.educations.concat(this.state.education),
-        })
+            education: {
+                degree: '',
+                uniname: '',
+                city: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            },
+        }
+        )
     }
 
     handleAddExperience = () => {
         this.setState({
-            experiences: this.state.experiences.concat(this.state.experience)
+            experiences: this.state.experiences.concat(this.state.experience),
+            experience: {
+                position: '',
+                company: '',
+                exp_city: '',
+                exp_from: '',
+                exp_to: '',
+                id: uniqid()
+            }
         })
     }
 
@@ -115,15 +127,15 @@ class Main extends Component{
             <div className="main-container">
                 <form className='form'>
                     <div className="subtitle">Peronal Information</div>
-                    <input onChange={this.handleChange} type='text' placeholder="First name..." id="form-firstname" value={this.state.first_name}/>
-                    <input onChange={this.handleChange} type='text' placeholder="Last name..." id="form-lastname" value={this.state.last_name}/>
-                    <input onChange={this.handleChange} type='number' placeholder="Phone..." id="form-phone" value={this.state.phone}/>
-                    <input onChange={this.handleChange} type='text' placeholder="Email..." id="form-email" value={this.state.email}/>
-                    <input onChange={this.handleChange} type='textarea' placeholder="Description..." id="form-description" value={this.state.description}/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="First name..." id="form-firstname" value={this.state.first_name} name='first_name'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Last name..." id="form-lastname" value={this.state.last_name} name='last_name'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='number' placeholder="Phone..." id="form-phone" value={this.state.phone} name='phone'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Email..." id="form-email" value={this.state.email} name='email'/>
+                    <input onChange={(e) => this.handlePersonalInfoChange(e)} type='textarea' placeholder="Description..." id="form-description" value={this.state.description} name='description'/>
             <>
+            <div className="subtitle" >Add Education</div>
             {this.state.educations.map((education, index) => (
-                <div className="edu-form" key={index}>
-                    <div className="subtitle" >Add Education</div>
+                <div className="edu-form" key={education.id}>
                     <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="Degree..." className="form-edu-degree" value={education.degree} name='degree'/>
                     <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="University name..." id="form-edu-uniname" value={education.uniname} name='uniname'/>
                     <input onChange={(e) => this.handleEducationChange(e, index)} type='text' placeholder="City..." id="form-edu-city" value={education.city} name='city'/>
@@ -139,9 +151,9 @@ class Main extends Component{
             ))}
             </>
             <>
+            <div className="subtitle">Add Experience</div>
             {this.state.experiences.map((experience, index) => (
-                <div className="exp-form" key={index}>
-                    <div className="subtitle">Add Experience</div>
+                <div className="exp-form" key={experience.id}>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Position..." className="form-exp-position" value={experience.position} name='position'/>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="Company..." className="form-exp-company" value={experience.company} name='company'/>
                     <input onChange={(e) => this.handleExperienceChange(e, index)} type='text' placeholder="City..." className="form-exp-city" value={experience.exp_city} name='exp_city'/>
