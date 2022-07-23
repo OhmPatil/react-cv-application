@@ -1,11 +1,11 @@
 import React, {Component} from "react";
-import '../styles/form.css'
+import '../styles/main.css'
 import RenderCV from "./RenderCV";
 // import EducationInfo from "./EducationInfo";
 import uniqid from 'uniqid'
 
 
-class Form extends Component{
+class Main extends Component{
     constructor(props){
         super(props);
 
@@ -155,7 +155,6 @@ class Form extends Component{
             ))}
             </>
                 </form>
-                <div>
                 <RenderCV firstname={this.state.first_name}
                           lastname={this.state.last_name}
                           phone={this.state.phone}
@@ -163,11 +162,10 @@ class Form extends Component{
                           description={this.state.description}
                           educations={this.state.educations}
                           experiences={this.state.experiences}/>
-                </div>
             </div>
         )
     }
 }
 
 
-export default Form
+export default Main
