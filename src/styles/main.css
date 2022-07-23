@@ -3,11 +3,12 @@
     --dark: #393E46;
     --lighter: #00ADB5;
     --lightest: #EEEEEE;
+    font-family: 'Raleway';
 }
 
 .main-container{
     column-gap: 100px;
-    row-gap: 50px;
+    row-gap: 100px;
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
@@ -43,11 +44,12 @@
 input{
     height: 1.20rem;
     width: 85%;
-    font-size: .75rem;
+    font-size: .9rem;
     border-radius: 10px;
     border: none;
     padding: 7px;
     background-color: var(--lightest);
+    font-family: 'Raleway';
 }
 
 button{
@@ -62,6 +64,7 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Raleway';
 }
 
 button:hover{

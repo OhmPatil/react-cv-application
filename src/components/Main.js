@@ -17,9 +17,7 @@ class Main extends Component{
             description: '',
             location: '',
             dob: '',
-          };
 
-          this.state = {
             educations: [{
                 degree: '',
                 uniname: '',
@@ -54,7 +52,8 @@ class Main extends Component{
                 exp_from: '',
                 exp_to: '',
                 id: uniqid()
-            }
+          }
+
         }
 
     }
@@ -126,11 +125,16 @@ class Main extends Component{
         this.setState({experiences: experienceList})
     }
 
+    handleFormReset = (e) => {
+        e.preventDefault()
+        window.location.reload()
+    }
+
     render(){
         return(
             <div className="main-container">
                 <form className='form'>
-                    <div className="subtitle">Peronal Information</div>
+                    <div className="subtitle">Personal Information</div>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="First name" id="form-firstname" value={this.state.first_name} name='first_name'/>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Last name" id="form-lastname" value={this.state.last_name} name='last_name'/>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Phone" id="form-phone" value={this.state.phone} name='phone'/>
@@ -175,6 +179,7 @@ class Main extends Component{
                     )}
                 </div>
             ))}
+            <button onClick={(e) => this.handleFormReset(e)}>Reset</button>
             </>
                 </form>
                 <RenderCV firstname={this.state.first_name}
