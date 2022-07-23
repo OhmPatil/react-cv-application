@@ -142,8 +142,6 @@ class Main extends Component{
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Location / Address" id="form-location" value={this.state.location} name='location'/>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Date Of Birth" id="form-dob" value={this.state.dob} name='dob'/>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='textarea' placeholder="About (optional)" id="form-description" value={this.state.description} name='description'/>
-
-                    <div className="divider"></div>
             <>
             <div className="subtitle" >Add Education</div>
             {this.state.educations.map((education, index) => (
