@@ -12,14 +12,17 @@ class RenderCV extends Component{
                     <div id="last-name">{this.props.lastname}</div>
                 </div>
                 <div className="contact-details">
-                    <div id="phone">Phone: {this.props.phone}</div>
-                    <div id="email">Email: {this.props.email}</div>
+                    {this.props.phone && (<div id="phone">Phone: {this.props.phone}</div>)}
+                    {this.props.email && (<div id="email">Email: {this.props.email}</div>)}
                 </div>
+
+                {this.props.description && (
                 <div>
                     <div className='subtitle'>About me</div>
                     <div className="divider"></div>
                     <div id="description">{this.props.description}</div>
                 </div>
+                )}
                 <div>
                     <div className="subtitle">Education</div>
                     <div className="divider"></div>
