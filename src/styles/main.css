@@ -1,22 +1,35 @@
+:root{
+    --darkest: #222831;
+    --dark: #393E46;
+    --lighter: #00ADB5;
+    --lightest: #EEEEEE;
+}
+
 .main-container{
-    /* border: 2px solid green; */
     column-gap: 100px;
     row-gap: 50px;
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
     place-content: center;
-    height: 85vh;
+    height: 80vh;
 }
 
 .form{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
     min-height: auto;
+    height: 100%;
     overflow: auto;
-    background-color: rgb(209, 209, 209);
+    background-color: var(--lighter);
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+.subtitle{
+    color: var(--darkest);
+    font-weight: 600;
+    font-size: larger;
 }
 
 .form, .edu-form, .exp-form{
@@ -30,22 +43,29 @@
 input{
     height: 1.20rem;
     width: 85%;
-    font-size: .8rem;
+    font-size: .75rem;
     border-radius: 10px;
     border: none;
     padding: 7px;
+    background-color: var(--lightest);
 }
 
 button{
     width: 50%;
     height: 1.5rem;
     border-radius: 10px;
-    font-size: .8rem;
+    font-size: .85rem;
     border: none;
-    padding: 5px;
+    padding: 20px;
+    background-color: var(--dark);
+    color: var(--lightest);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover{
     cursor: pointer;
-    filter: invert(1);
+    background-color: var(--darkest);
+    color: var(--lighter);
 }

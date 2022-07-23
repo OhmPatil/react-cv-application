@@ -5,8 +5,8 @@ class Header extends Component{
 
     render(){
         return(
-            <header>
-                <h1>CV Application</h1>
+            <header id="header">
+                <h1 id="header-title">CV Application</h1>
             </header>
         )
     }

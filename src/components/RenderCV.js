@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import '../styles/rendercv.css'
-// import RenderEducation from "./RenderEducation";
+
 
 class RenderCV extends Component{
 
@@ -18,13 +18,13 @@ class RenderCV extends Component{
 
                 {this.props.description && (
                 <div>
-                    <div className='subtitle'>About me</div>
+                    <div className='cv-subtitle'>About me</div>
                     <div className="divider"></div>
                     <div id="description">{this.props.description}</div>
                 </div>
                 )}
                 <div>
-                    <div className="subtitle">Education</div>
+                    <div className="cv-subtitle">Education</div>
                     <div className="divider"></div>
                 </div>
                 {this.props.educations.map((education, index) => (
@@ -39,7 +39,7 @@ class RenderCV extends Component{
                 ))}
 
                 <div>
-                    <div className="subtitle">Experience</div>
+                    <div className="cv-subtitle">Experience</div>
                     <div className="divider"></div>
                 </div>
                 {this.props.experiences.map((experience, index) => (

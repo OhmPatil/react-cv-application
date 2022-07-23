@@ -1,3 +1,10 @@
+:root{
+    --darkest: #222831;
+    --dark: #393E46;
+    --lighter: #00ADB5;
+    --lightest: #EEEEEE;
+}
+
 .cv-container{
     padding-left: 25px;
     padding-right: 25px;
@@ -5,21 +12,25 @@
     overflow: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
+    background-color: var(--lightest);
 }
 
 .cv-container > *{
     margin-top: 10px;
     margin-bottom: 10px;
+    color: var(--darkest);
 }
 
-.subtitle{
+.cv-subtitle{
     font-weight: 600;
+    background-color: rgb(204, 204, 204);
+    margin-top: 20px;
 }
 
 .divider{
     height: 2px;
     width: 100%;
-    background-color: gray;
+    background-color: var(--dark);
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -41,17 +52,22 @@
 #description{
     font-style: italic;
     word-wrap: break-word;
+    margin-bottom: 20px;
 }
 
 .edu-container, .exp-container{
     display: flex;
     gap: 50px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .from-to, .uniname-city, .position{
     font-weight: 600;
+}
+
+.from-to{
+    width: 140px;
 }
 
 .edu-details, .exp-details{
