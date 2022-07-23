@@ -15,10 +15,10 @@ class RenderCV extends Component{
                 <div className="contact-details">
                     {this.props.phone && (<div id="phone"><FaPhoneSquareAlt size='1.25rem'/>{this.props.phone}</div>)}
                     {this.props.email && (<div id="email"><FaEnvelope size='1.25rem'/>{this.props.email}</div>)}
-                    {this.props.location && (<div id="phone"><FaMapMarkerAlt size='1.25rem'/>{this.props.location}</div>)}
-                    {this.props.dob && (<div id="email"><FaRegCalendarAlt size='1.25rem'/>{this.props.dob}</div>)}
                 </div>
                 <div className="contact-details">
+                    {this.props.location && (<div id="phone"><FaMapMarkerAlt size='1.25rem'/>{this.props.location}</div>)}
+                    {this.props.dob && (<div id="email"><FaRegCalendarAlt size='1.25rem'/>{this.props.dob}</div>)}
                 </div>
 
                 {this.props.description && (

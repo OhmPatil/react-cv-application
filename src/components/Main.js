@@ -130,6 +130,53 @@ class Main extends Component{
         window.location.reload()
     }
 
+    loadExample = (e) => {
+        e.preventDefault()
+        this.setState({
+            first_name: 'Eddie',
+            last_name: 'Munson',
+            phone: '+91 1234567890',
+            email: 'eddiemunson@example.com',
+            dob: '30 Feb 1969',
+            location: 'Hawkins, Indiana',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.',
+
+            educations: [{
+                degree: 'BTech, Computer Science',
+                uniname: 'Indian Institute Of Technology',
+                city: 'Kota',
+                from: '2016',
+                to: '2020',
+                id: uniqid()
+            },
+            {
+                degree: 'MTech, Computer Networking',
+                uniname: 'University of Technology',
+                city: 'New York',
+                from: '2020',
+                to: '2022',
+                id: uniqid()
+            }],
+
+            experiences: [{
+                position: 'Junior Web Developer',
+                company: 'Netflix',
+                exp_city: 'Paris',
+                exp_from: '2022',
+                exp_to: '2024',
+                id: uniqid()
+            }, 
+            {
+                position: 'Senior Web Developer',
+                company: 'Microsoft',
+                exp_city: 'Rotterdam',
+                exp_from: '2024',
+                exp_to: 'present',
+                id: uniqid()
+            }]
+        })
+    }
+
     render(){
         return(
             <div className="main-container">
@@ -160,7 +207,6 @@ class Main extends Component{
                 </div>
             ))}
             </>
-            <>
             <div className="subtitle">Add Experience</div>
             {this.state.experiences.map((experience, index) => (
                 <div className="exp-form" key={experience.id}>
@@ -177,8 +223,8 @@ class Main extends Component{
                     )}
                 </div>
             ))}
-            <button onClick={(e) => this.handleFormReset(e)}>Reset</button>
-            </>
+                <button id="example-button" onClick={(e) => this.loadExample(e)}>Load Example</button>
+                <button id="reset-button" onClick={(e) => this.handleFormReset(e)}>Reset</button>
                 </form>
                 <RenderCV firstname={this.state.first_name}
                           lastname={this.state.last_name}
