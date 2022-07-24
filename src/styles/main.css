@@ -58,7 +58,7 @@ button{
     width: 50%;
     height: 1.5rem;
     border-radius: 10px;
-    font-size: .85rem;
+    font-size: .95rem;
     border: none;
     padding: 20px;
     background-color: var(--darkest);
@@ -72,6 +72,33 @@ button{
 
 #example-button{
     margin-top: 50px;
+    background-color: #C400C6;
+}
+
+#example-button:hover{
+    color: var(--lightest);
+    background-color: #7a06af;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+
+#reset-button{
+    background-color: #FF0000;
+}
+
+#reset-button:hover{
+    color: var(--lightest);
+    background-color: #950101;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+
+#print-button{
+    background-color: #4E9F3D;
+}
+
+#print-button:hover{
+    color: var(--lightest);
+    background-color: #227533;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
 }
 
 button:hover{

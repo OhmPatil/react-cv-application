@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import '../styles/main.css'
 import RenderCV from "./RenderCV";
-// import EducationInfo from "./EducationInfo";
-import uniqid from 'uniqid'
+import uniqid from 'uniqid';
+import ReactToPrint from 'react-to-print'
 
 
 class Main extends Component{
@@ -130,6 +130,10 @@ class Main extends Component{
         window.location.reload()
     }
 
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+    }
+
     loadExample = (e) => {
         e.preventDefault()
         this.setState({
@@ -180,7 +184,7 @@ class Main extends Component{
     render(){
         return(
             <div className="main-container">
-                <form className='form'>
+                <form className='form' onSubmit={(e) => this.handleFormSubmit(e)} action=''>
                     <div className="subtitle">Personal Information</div>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="First name" id="form-firstname" value={this.state.first_name} name='first_name'/>
                     <input onChange={(e) => this.handlePersonalInfoChange(e)} type='text' placeholder="Last name" id="form-lastname" value={this.state.last_name} name='last_name'/>
@@ -224,8 +228,18 @@ class Main extends Component{
                 </div>
             ))}
                 <button id="example-button" onClick={(e) => this.loadExample(e)}>Load Example</button>
+                <ReactToPrint
+                    trigger={() => {
+                        return <button id="print-button" >Print / Save as PDF</button>
+                    }}
+                    content={() => this.componentRef}
+                    pageStyle='print'
+                    documentTitle="myCV"
+                />
                 <button id="reset-button" onClick={(e) => this.handleFormReset(e)}>Reset</button>
                 </form>
+
+                <div ref={el => (this.componentRef=el)}>
                 <RenderCV firstname={this.state.first_name}
                           lastname={this.state.last_name}
                           phone={this.state.phone}
@@ -235,6 +249,7 @@ class Main extends Component{
                           description={this.state.description}
                           educations={this.state.educations}
                           experiences={this.state.experiences}/>
+                </div>
             </div>
         )
     }
