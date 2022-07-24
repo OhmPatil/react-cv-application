@@ -12,6 +12,7 @@
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
+    grid-template-rows: auto;
     place-content: center;
     height: 80vh;
 }

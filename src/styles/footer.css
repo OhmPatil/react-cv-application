@@ -1,0 +1,31 @@
+:root{
+    --darkest: #222831;
+    --dark: #393E46;
+    --lighter: #00ADB5;
+    --lightest: #EEEEEE;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    background-color: var(--lighter);
+    height: 3vh;
+}
+
+#footer-text, #footer-text >*{
+    color: var(--lightest);
+    font-size: 1.20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Raleway';
+    color: var(--darkest);
+    font-weight: 500;
+}
+
+#footer-text >*:hover{
+    color: var(--lightest);
+}
