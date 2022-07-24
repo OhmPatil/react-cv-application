@@ -12,9 +12,10 @@
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
-    grid-template-rows: auto;
+    grid-template-rows: 80vh;
     place-content: center;
     height: 80vh;
+    /* overflow: auto; */
 }
 
 .form{
