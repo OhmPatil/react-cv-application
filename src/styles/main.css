@@ -11,7 +11,7 @@
     row-gap: 100px;
     margin: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 800px));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 700px));
     grid-template-rows: 80vh;
     place-content: center;
     height: 80vh;
