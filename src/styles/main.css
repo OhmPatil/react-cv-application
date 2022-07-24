@@ -22,13 +22,13 @@
     min-height: auto;
     height: 100%;
     overflow: auto;
-    background-color: var(--lighter);
-    /* padding-top: 25px; */
+    background-color: var(--dark);
+    padding-top: 25px;
     padding-bottom: 25px;
 }
 
 .subtitle{
-    color: var(--darkest);
+    color: var(--lighter);
     font-weight: 600;
     font-size: x-large;
     margin-top: 25px;
@@ -49,8 +49,9 @@ input{
     border-radius: 10px;
     border: none;
     padding: 7px;
-    background-color: var(--lightest);
+    background-color: var(--darkest);
     font-family: 'Raleway';
+    color: var(--lightest);
 }
 
 button{
@@ -60,7 +61,7 @@ button{
     font-size: .85rem;
     border: none;
     padding: 20px;
-    background-color: var(--dark);
+    background-color: var(--darkest);
     color: var(--lightest);
     display: flex;
     justify-content: center;
@@ -75,6 +76,6 @@ button{
 
 button:hover{
     cursor: pointer;
-    background-color: var(--darkest);
-    color: var(--lighter);
+    background-color: var(--lighter);
+    color: var(--dark);
 }

@@ -1,7 +1,14 @@
+:root{
+    --darkest: #222831;
+    --dark: #393E46;
+    --lighter: #00ADB5;
+    --lightest: #EEEEEE;
+}
+
 #header{
     height: 10vh;
     width: 100%;
-    background-color: rgba(34, 40, 49, 1);
+    background-color: var(--lighter);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,4 +21,5 @@
     align-items: center;
     font-size: 2rem;
     font-family: 'Raleway';
+    color: var(--darkest);
 }
