@@ -72,8 +72,6 @@ class Main extends Component{
         const educationList = [...this.state.educations]
         educationList[index][e.target.name] = e.target.value
         this.setState({educations: educationList})
-
-        console.log(this.state.educations);
     }
 
     handleExperienceChange = (e, index) => {
