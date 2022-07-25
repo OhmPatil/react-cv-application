@@ -9,9 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
     background-color: var(--lighter);
-    height: 3vh;
+    height: 4%;
+    width: 105%;
 }
 
 #footer-text, #footer-text >*{

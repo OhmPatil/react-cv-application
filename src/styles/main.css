@@ -7,26 +7,27 @@
 }
 
 .main-container{
-    column-gap: 100px;
-    row-gap: 100px;
-    margin: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 700px));
-    grid-template-rows: 80vh;
-    place-content: center;
-    height: 80vh;
-    /* overflow: auto; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    height: 83.5%;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 }
 
 .form{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
-    min-height: auto;
     height: 100%;
+    width: 700px;
     overflow: auto;
     background-color: var(--dark);
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .subtitle{
@@ -39,9 +40,14 @@
 .form, .edu-form, .exp-form{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    height: 100%;
+    /* width: 85%; */
     gap: 10px;
     align-items: center;
+}
+
+.edu-form, .exp-form{
+    width: 100%;
 }
 
 input{

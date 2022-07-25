@@ -237,8 +237,8 @@ class Main extends Component{
                 <button id="reset-button" onClick={(e) => this.handleFormReset(e)}>Reset</button>
                 </form>
 
-                <div ref={el => (this.componentRef=el)}>
-                <RenderCV firstname={this.state.first_name}
+                <RenderCV ref={el => (this.componentRef=el)}
+                          firstname={this.state.first_name}
                           lastname={this.state.last_name}
                           phone={this.state.phone}
                           email={this.state.email}
@@ -247,7 +247,6 @@ class Main extends Component{
                           description={this.state.description}
                           educations={this.state.educations}
                           experiences={this.state.experiences}/>
-                </div>
             </div>
         )
     }
