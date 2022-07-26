@@ -7,12 +7,10 @@
 }
 
 .cv-container{
+    margin-left: 20px;
+    margin-right: 20px;
     padding-left: 25px;
     padding-right: 25px;
-    /* padding-top: 25px; */
-    /* padding-bottom: 25px; */
-    /* min-height: auto; */
-    /* min-height: 100%; */
     height: 100%;
     width: 700px;
     overflow: auto;

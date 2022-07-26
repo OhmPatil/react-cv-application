@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 60px;
 }
 
 .form{
@@ -28,6 +28,8 @@
     background-color: var(--dark);
     padding-left: 25px;
     padding-right: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .subtitle{
